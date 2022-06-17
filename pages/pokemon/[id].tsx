@@ -22,6 +22,10 @@ const PokemonPage: NextPage<PokemonPageProps> = ({ pokemon }) => {
                   width='100%'
                   height={ 200 }
                 />
+                <Text h1 transform="capitalize"> Habilidades:</Text>
+                { pokemon.abilities.map( ability => (
+                  <Text key={ability.ability.name} h3 transform="capitalize"> { ability.ability.name } </Text>
+                ))}
               </Card.Body>
             </Card>
           </Grid>
@@ -30,6 +34,16 @@ const PokemonPage: NextPage<PokemonPageProps> = ({ pokemon }) => {
             <Card>
               <Card.Header css={{ display:'flex', justifyContent: 'space-between' }}>
                 <Text h1 transform="capitalize">{ pokemon.name }</Text>
+                { pokemon.types.map( type => ( 
+                    <Text 
+                      h4 
+                      css={{ border:'1px solid #fff', borderRadius:'5px', padding: '0 5px' }}
+                      key={type.type.name} 
+                      transform="capitalize"> 
+                        {type.type.name} 
+                      </Text> 
+                  ))
+                }
                 <Button color="gradient" ghost>Guardar en favoritos</Button>
               </Card.Header>
               <Card.Body>
