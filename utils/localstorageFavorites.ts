@@ -21,7 +21,7 @@ const existInFavorites = ( id: number ): boolean => {
     return favorites.includes( id )
 }
 
-export default {
+export const LocalFavorites = {
     toggleFavorite,
     existInFavorites,
 }

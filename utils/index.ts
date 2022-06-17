@@ -1,1 +1,1 @@
-export { default as LocalFavorites} from './localstorageFavorites'
+export { LocalFavorites } from './localstorageFavorites'
